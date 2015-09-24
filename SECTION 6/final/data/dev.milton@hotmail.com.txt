@@ -1,0 +1,1 @@
+{"name":"milton","email":"dev.milton@hotmail.com","password":"$2y$10$LdmOvSk.q\/VDZNlpbXOfYe9AolCze2G8uEAtLAtRApwcqOK0KgdJ6"}

@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Home page - Web application with Slim</title>
+</head>
+<body>
+    <h1>web Application with SLIM MicroFramework</h1>
+    <h2>By Milton - goodlearn.org</h2>
+    <?php
+        
+        if(!$userAuthenticated){
+            echo '<a href="http://localhost/app/login">Login</a> | ';
+        }else{
+            echo '<h3>Welcome '. $_SESSION['user']['name'] . '</h3>';
+            echo '</br>';
+            echo '<a href="http://localhost/logout">Logout</a> | ';
+            echo '<a href="http://localhost/app/listuser">All Users</a> | ';
+            echo '<a href="http://localhost/app/edituser">Edit My Info</a> | ';
+        }
+        echo '<a href="http://localhost/app/adduser">New user</a>';
+    ?>
+    <p>
+</body>
+</html>

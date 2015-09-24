@@ -1,0 +1,15 @@
+1 - Open the file httpd.conf that can be found in the apache folder installation.
+
+2 - Find and uncomment this line 
+#LoadModule rewrite_module modules/mod_rewrite.so
+
+3 - after, look for 
+    # AllowOverride controls what directives may be placed in .htaccess files.
+    # It can be "All", "None", or any combination of the keywords:
+    #   AllowOverride FileInfo AuthConfig Limit
+    #
+    AllowOverride all
+
+and where is AllowOverride all, change it for AllowOverride All
+	
+4 - Save the httpd.conf file and restart Apache.

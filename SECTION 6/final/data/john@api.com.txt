@@ -1,0 +1,1 @@
+{"name":"john carter","email":"john@api.com","password":"$2y$10$QPMRCtATC\/Tx.qZ1j\/3NQejt0qv1MnxrwrbbayPwwfuf4SLm.XYkO"}

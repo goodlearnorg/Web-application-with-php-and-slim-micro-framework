@@ -1,0 +1,67 @@
+<?php
+	if(isset($_POST['name'])){
+		$url = "http://localhost/final/user/add";
+
+		$options = ["http" => [
+		"method" => "PUT",
+		"header" => ["Connection: close", "Content-type: application/x-www-form-urlencoded"],
+		"content"=>http_build_query(array('name'=>$_POST['name'], 'email'=>$_POST['email'], 'password'=>$_POST['password']))   
+		]];	
+		
+		$context = stream_context_create($options);
+		
+		try{
+			file_get_contents($url, false, $context);	
+			
+			if(strpos($http_response_header[0], '200')){
+				$msg = "<h1>User saved successfully</h2>";
+			}			
+		}catch(Exception $e)
+		{	
+			if(strpos($http_response_header[0], '409')){
+				$msg = "<h1>User already exists</h2>";
+			}
+			else{
+				echo $e->getMessage();
+			}			
+		}		
+	}		
+?>
+<html>
+<head></head>
+<body>
+	<!--SERVICE SECTION START-->
+	<section id="services">
+		<div class="container" >
+			<div class="row text-center header">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 animate-in" data-anim-type="fade-in-up">
+				<h3>New User</h3>
+				<hr />
+				</div>
+			</div>
+			<div  class="row animate-in" data-anim-type="fade-in-up">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="services-wrapper">											
+						<form style="margin:0 auto; width:50%;" action="" method="POST">    
+							<?php if(isset($msg)) echo $msg?>
+							Name:<br>
+							<input type="text" class="form-control" name="name" required>
+							<br>
+							E-mail:<br>
+							<input type="text" class="form-control" name="email" required>
+							<br>
+							Password:<br>
+							<input type="password" class="form-control" name="password" required>
+							<br>
+							<input class="btn btn-primary" type="submit" Value="Save User">
+						</form>
+						
+					</div>
+				</div>	
+			</div>				
+		</div>
+	</section>
+	<!--SERVICE SECTION END-->
+	
+</body>
+</html>

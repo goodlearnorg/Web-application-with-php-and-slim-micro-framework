@@ -1,0 +1,46 @@
+<?php
+	if(isset($_POST['name'])){
+		$url = "http://localhost/Lecture19/user/add";
+
+		$options = ["http" => [
+		"method" => "PUT",
+		"header" => ["Connection: close", "Content-type: application/x-www-form-urlencoded"],
+		"content"=>http_build_query(array('name'=>$_POST['name'], 'email'=>$_POST['email'], 'password'=>$_POST['password']))   
+		]];	
+		
+		$context = stream_context_create($options);
+		
+		try{
+			file_get_contents($url, false, $context);	
+			
+			if(strpos($http_response_header[0], '200')){
+				echo "<h1>User saved successfully</h2>";
+			}			
+		}catch(Exception $e)
+		{	
+			if(strpos($http_response_header[0], '409')){
+				echo "<h1>User already exists</h2>";
+			}
+			else{
+				echo $e->getMessage();
+			}			
+		}		
+	}		
+?>
+<html>
+<head></head>
+<body>
+	<form action="" method="POST">    
+		Name:<br>
+		<input type="text" name="name" required>
+		<br>
+		E-mail:<br>
+		<input type="text" name="email" required>
+		<br>
+		Password:<br>
+		<input type="password" name="password" required>
+		<br>
+		<input type="submit" Value="Save User">
+	</form>
+</body>
+</html>

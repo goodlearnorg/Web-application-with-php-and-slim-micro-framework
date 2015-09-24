@@ -1,0 +1,1 @@
+{"name":"john carter","email":"fhgfh","password":"$2y$10$3jwsmZHVBfpn.AUdDg4SPutBa3uZQ7jy43G0v1ddzScKWdsy4eDWm"}

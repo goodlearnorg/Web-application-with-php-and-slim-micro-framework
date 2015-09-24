@@ -1,0 +1,1 @@
+{"name":"test","email":"teste","password":"$2y$10$aOC820DQtyTlzZeABy3oKuy2HFe6dAszlNXgr.6kuWq36.vASAMaq"}

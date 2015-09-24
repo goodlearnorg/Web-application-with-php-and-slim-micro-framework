@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+	<form action="" method="POST">    
+		E-mail:<br>
+		<input type="text" name="email" value="<?php echo $_SESSION['user']['email'] ?>" disabled required>
+		<br>
+		Name:<br>
+		<input type="text" name="name" value="<?php echo $_SESSION['user']['name'] ?>" required>			
+		<br>
+		New Password:<br>
+		<input type="password" name="password" required>
+		<br>
+		<input type="submit" Value="Save">
+	</form>
+	<p>
+	
+	<form action="http://localhost/Lecture18/user/delete" method="POST">
+		<input type="hidden" name="_METHOD" value="DELETE" />
+		<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email'] ?>" />
+		<input type="submit" Value="Delete My User">
+	</form>
+</body>
+</html>
