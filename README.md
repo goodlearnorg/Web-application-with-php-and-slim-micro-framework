@@ -1,4 +1,4 @@
-# Beyond basics - Web application with php and Slim microframework
+# Beyond basics - Web application with php and Slim micro framework
 # Section 1
 	Configuring apache server
 # Section 2
